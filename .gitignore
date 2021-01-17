@@ -1,2 +1,6 @@
 ubuntu/playbooks/roles/sssd_auth/vars/secrets.yml
 ubuntu/playbooks/roles/sssd_auth/vars/main.yml
+ubuntu/playbooks/roles/add_domain_controller/vars/secrets.yaml
+ubuntu/playbooks/roles/add_domain_controller/vars/main.yaml
+ubuntu/playbooks/group_vars/domaincontrollers/vault_.yaml
+ubuntu/playbooks/hosts

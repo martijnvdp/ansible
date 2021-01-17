@@ -1,0 +1,24 @@
+- name: Ensure a server is a domain controller
+  ansible.windows.win_domain_controller:
+    dns_domain_name: {{ domain }}
+    domain_admin_user: {{ admin_user }}
+    domain_admin_password: {{ admin_password }}
+    safe_mode_password: {{ safe_mode_password }}
+    state: domain_controller
+
+- name: Ensure a server is not a domain controller
+  ansible.windows.win_domain_controller:
+    domain_admin_user: {{ admin_user }}
+    domain_admin_password: {{ safe_mode_password }}
+    local_admin_password: {{ local_admin_password }}
+    state: member_server
+
+- name: Promote server as a domain controller
+  ansible.windows.win_domain_controller:
+    dns_domain_name: {{ domain }}
+    domain_admin_user: {{ admin_user }}
+    domain_admin_password: {{ safe_mode_password }}
+    safe_mode_password: {{ safe_mode_password }}
+    state: domain_controller
+    read_only: no
+    site_name: London

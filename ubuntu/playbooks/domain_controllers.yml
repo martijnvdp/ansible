@@ -1,0 +1,4 @@
+---
+- hosts: domaincontrollers
+  roles:
+    - add_domain_controller
