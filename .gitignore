@@ -1,0 +1,2 @@
+ubuntu/playbooks/roles/sssd_auth/vars/secrets.yml
+ubuntu/playbooks/roles/sssd_auth/vars/main.yml
