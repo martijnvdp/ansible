@@ -7,3 +7,4 @@ ubuntu/playbooks/hosts
 windows/playbooks/hosts
 windows/playbooks/roles/add_domain_controller/vars/secrets.yml
 windows/playbooks/group_vars/domaincontrollers/vault_.yaml
+windows/playbooks/group_vars/domaincontrollers/main.yaml
