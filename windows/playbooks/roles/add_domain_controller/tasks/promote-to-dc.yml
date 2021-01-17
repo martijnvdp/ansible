@@ -1,0 +1,16 @@
+---
+- name "set dns"
+win_dns_client:
+    adapter_names: Ethernet
+    ipv4_addresses: "{{ dns }}"
+- name: "Promote server as a domain controller"
+  win_domain_controller:
+    dns_domain_name: "{{ domain }}"
+    domain_admin_user: "{{ admin_user }}"
+    domain_admin_password: "{{ safe_mode_password }}"
+    safe_mode_password: "{{ safe_mode_password }}"
+    log_path: 'c:\temp\ansible_win_domain_controller.txt'
+    state: domain_controller
+- name: Reboot after promotion
+  win_reboot:
+  when: dc_promotion.reboot_required
